@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "SFDisplay-black";
+  src: url("~assets/font/SF-Pro-Display-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SFDisplay-bold";
+  src: url("~assets/font/SF-Pro-Display-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SFDisplay-light";
+  src: url("~assets/font/SF-Pro-Display-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SFDisplay";
+  src: url("~assets/font/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SFDisplay-medium";
+  src: url("~assets/font/SF-Pro-Display-Medium.otf") format("opentype");
+}
+
+.SFDisplay-black {
+  font-family: SFDisplay-black;
+}
+
+.SFDisplay-bold {
+  font-family: SFDisplay-bold;
+}
+
+.SFDisplay-light {
+  font-family: SFDisplay-light;
+}
+
+.SFDisplay {
+  font-family: SFDisplay;
+}
+
+.SFDisplay-medium {
+  font-family: SFDisplay-medium;
+}
+
+body {
+  font-family: SFDisplay;
+  line-height: 1.5;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
