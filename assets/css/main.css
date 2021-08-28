@@ -14,6 +14,11 @@
 }
 
 @font-face {
+  font-family: "SFDisplay-heavy";
+  src: url("~assets/font/SF-Pro-Display-Heavy.otf") format("opentype");
+}
+
+@font-face {
   font-family: "SFDisplay";
   src: url("~assets/font/SF-Pro-Display-Regular.otf") format("opentype");
 }
@@ -39,6 +44,10 @@
   font-family: SFDisplay;
 }
 
+.SFDisplay-heavy {
+  font-family: SFDisplay-heavy;
+}
+
 .SFDisplay-medium {
   font-family: SFDisplay-medium;
 }
@@ -50,4 +59,7 @@ body {
 
 .uppercase {
   text-transform: uppercase;
+}
+.container {
+  max-width: 1140px;
 }

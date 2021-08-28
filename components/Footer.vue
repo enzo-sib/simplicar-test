@@ -12,25 +12,25 @@
             pd-4
           "
         >
-          <span class="SFDisplay-bold pe-3">Nissan. </span>
+          <span class="SFDisplay-heavy pe-3">Nissan. </span>
           Innovation that excites
         </div>
       </div>
       <div class="row my-3">
-        <div class="col-3">
+        <div class="col-md-3">
           <ul class="list">
             <li class="list-item">
               <p class="list-item-title SFDisplay-bold uppercase">cotización de vehículos</p>
             </li>
             <li class="list-item">
               <div class="d-flex flex-row align-items-center gap-1">
-                <i class="bi bi-exclamation-circle"></i>
+                <i class="ri-information-line"></i> 
                 <NuxtLink class="list-item-link" to="/informacion-legal">Información Legal</NuxtLink>
               </div>
             </li>
           </ul>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <ul class="list">
             <li class="list-item">
               <p class="list-item-title SFDisplay-bold uppercase">Ralitor S.A.</p>
@@ -43,7 +43,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <ul class="list">
             <li class="list-item">
               <p class="list-item-title SFDisplay-bold uppercase">Ayuda al Cliente</p>
@@ -53,7 +53,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <ul class="list">
             <li>
               <p class="list-item-title SFDisplay-bold uppercase">Nissan Social</p>
@@ -80,6 +80,9 @@ export default {};
 </script>
 
 <style scoped>
+.container{
+  max-width: 1140px;
+}
 .list {
   list-style-type: none;
   margin-left: 0;

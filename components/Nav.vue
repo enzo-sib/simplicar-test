@@ -1,15 +1,91 @@
 <template>
-  <div>
-    <img src="~/assets/img/brand.svg" />
+  <div class="row">
+    <div class="col-12">
+      <nav class="d-flex flex-row align-items-center">
+        <NuxtLink to="/"><img src="~/assets/img/brand.svg" /></NuxtLink>
+        <div class="desktop d-flex flex-row">
+          <ul class="list d-flex flex-row align-items-center gap-4">
+            <NavLink v-for="link in links" :key="link.name" :link="link" />
+          </ul>
+          <div class="search-bar">
+            <form>
+              <input id="search" class="form-control SFDisplay uppercase" placeholder="buscar por modelo o vehiculo" type="text">
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    
+    data () {
+      return {
+        links : [
+          {
+            "name" : "vehículos",
+            "src" : "/store"
+          },
+          {
+            "name" : "descubrí  nissan",
+            "src" : "/"
+          }
+        ]
+      }
+    }
   }
 </script>
 
 <style scoped>
-
+.row{
+  margin-right: 0 !important;
+}
+.list {
+  list-style: none;
+  margin-bottom: 0 !important;
+}
+.search-bar{
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+#search {
+  background-image: url(~/assets/img/search.svg);
+  background-repeat: no-repeat;
+  background-position: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: hsla(0,0%,100%,.8);
+  width: 323px;
+  height: 60px;
+  float: right;
+  padding-left: 50px;
+  font-size: 13px;
+}
+.form-control{
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+  outline: 0 !important;
+  box-shadow: none !important;
+}
 </style>
