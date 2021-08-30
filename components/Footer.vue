@@ -1,13 +1,13 @@
 <template>
   <footer class="footer-page">
-    <div class="container pt-5">
+    <div class="container mx-auto pt-5">
       <div class="row">
         <div
           class="
             col-12
-            d-flex
+            flex
             flex-row
-            align-items-center
+            items-center
             nissan-logo
             pd-4
           "
@@ -16,14 +16,14 @@
           Innovation that excites
         </div>
       </div>
-      <div class="row my-3">
+      <div class="grid grid-cols-4 my-3">
         <div class="col-md-3">
           <ul class="list">
             <li class="list-item">
               <p class="list-item-title SFDisplay-bold uppercase">cotización de vehículos</p>
             </li>
             <li class="list-item">
-              <div class="d-flex flex-row align-items-center gap-1">
+              <div class="flex flex-row items-center gap-1">
                 <i class="ri-information-line"></i> 
                 <NuxtLink class="list-item-link" to="/informacion-legal">Información Legal</NuxtLink>
               </div>
@@ -58,7 +58,7 @@
             <li>
               <p class="list-item-title SFDisplay-bold uppercase">Nissan Social</p>
             </li>
-            <li class="d-flex flex-row align-items-center">
+            <li class="flex flex-row items-center">
               <a href="https://www.facebook.com/nissanuruguay" class="list-item-link"> <i class="list-item-icon ri-facebook-fill"></i> </a>
               <a href="https://www.instagram.com/nissanuruguay" class="list-item-link"> <i class="list-item-icon ri-instagram-line"></i> </a>
               <a href="https://www.twitter.com/uruguaynissan" class="list-item-link"> <i class="list-item-icon ri-twitter-fill"></i> </a>
@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="right-divider"></div>
-    <div class="container py-4">
+    <div class="container mx-auto pt-4 pb-10">
       <p class="copyright">© 2020 SIMPLICAR. Todos los derechos reservados.</p>
     </div>
   </footer>
@@ -80,9 +80,6 @@ export default {};
 </script>
 
 <style scoped>
-.container{
-  max-width: 1140px;
-}
 .list {
   list-style-type: none;
   margin-left: 0;

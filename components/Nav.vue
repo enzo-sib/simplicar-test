@@ -1,10 +1,9 @@
 <template>
-  <div class="row">
-    <div class="col-12">
-      <nav class="d-flex flex-row align-items-center">
+  <div class="grid grid-cols-1">
+      <nav class="flex flex-row items-center">
         <NuxtLink to="/"><img src="~/assets/img/brand.svg" /></NuxtLink>
         <div class="desktop d-flex flex-row">
-          <ul class="list d-flex flex-row align-items-center gap-4">
+          <ul class="list-none mb-0 flex flex-row items-center ml-8 gap-x-6">
             <NavLink v-for="link in links" :key="link.name" :link="link" />
           </ul>
           <div class="search-bar">
@@ -14,7 +13,6 @@
           </div>
         </div>
       </nav>
-    </div>
   </div>
 </template>
 
@@ -38,13 +36,6 @@
 </script>
 
 <style scoped>
-.row{
-  margin-right: 0 !important;
-}
-.list {
-  list-style: none;
-  margin-bottom: 0 !important;
-}
 .search-bar{
   position: absolute;
   right: 15px;

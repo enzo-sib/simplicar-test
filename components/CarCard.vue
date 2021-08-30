@@ -1,40 +1,46 @@
 <template>
-  <div class="col-md-4">
-    <NuxtLink to="/" class="text-decoration-none">
+  <NuxtLink :to="redirect" class="text-decoration-none">
     <div class="card-container">
-      <div class="row m-3">
-        <img class="p-0" src="~/assets/img/car.jpg" />
-        <p class="card-name my-2 SFDisplay-bold uppercase">VERSA</p>
+      <img class="max-w-full p-0" :src="img" />
+      <div class="m-3">
+        <p class="card-name my-2 SFDisplay-bold uppercase" v-text="car.model"></p>
         <div class="divider"></div>
-        <div class="d-flex flex-row my-4 p-0">
-          <div class="col-8 p-0 d-flex align-items-center">
+        <div class="flex flex-row my-4 p-0">
+          <div class="p-0 flex items-center">
             <p class="price-title uppercase SFDisplay-bold p-0 m-0">Precio desde</p>
           </div>
-          <div class="col-4 p-0 ml-auto">
-            <p class="price uppercase SFDisplay-bold p-0 m-0">US$ 15,990</p>
+          <div class="p-0 ml-auto">
+            <p class="price uppercase SFDisplay-bold p-0 m-0">US$ {{car.amount}}</p>
           </div>
         </div>
         <div class="divider"></div>
-        <div class="col-12 p-0">
-          <div class="card-details col-12 d-flex align-items-center uppercase SFDisplay-medium pt-3 pb-1">
-            <div class="col-11">
-              ver detalles de modelo
+        <div class="p-0">
+          <div class="flex items-center uppercase SFDisplay-medium pt-3 pb-1">
+            <div class="p-0">
+              <p class="card-details-color uppercase SFDisplay-medium p-0 m-0">ver detalles de modelo</p>
             </div>
-            <i class="card-details-icon col-1 ri-arrow-right-line"></i>
+            <div class="p-0 ml-auto">
+              <i class="text-xl card-details-color ri-arrow-right-line mr-2"></i>
+            </div>
           </div>
-          <div class="col-12 mt-2">
-            <p class="p-0 card-advise">Imágenes meramente ilustrativas no reportando la realidad exacta, pudiendo existir variaciones en la percepción.</p>
+          <div class="mt-2">
+            <p class="p-0 pb-2 card-advise">Imágenes meramente ilustrativas no reportando la realidad exacta, pudiendo existir variaciones en la percepción.</p>
           </div>
         </div>
       </div>
     </div>
-    </NuxtLink>
-  </div>
+  </NuxtLink>
 </template>
 
 <script>
   export default {
-    
+    props: ['car'],
+    data () {
+      return {
+        img: `https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/${this.car.gallery[0].large}`,
+        redirect: `/cars/${this.car.id}`
+      } 
+    }
   }
 </script>
 
@@ -60,11 +66,8 @@
     font-size: 16px;
     text-align: right;
   }
-  .card-details{
+  .card-details-color{
     color: #c3002f;
-  }
-  .card-details-icon{
-    font-size: 115%;
   }
   .card-advise{
     color: #c1c1c1;
