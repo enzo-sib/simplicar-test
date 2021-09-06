@@ -8,7 +8,7 @@
           </ul>
           <div class="search-bar">
             <form>
-              <input id="search" class="form-control SFDisplay uppercase" placeholder="buscar por modelo o vehiculo" type="text">
+              <input id="search" class="form-control float-right SFDisplay uppercase" placeholder="buscar por modelo o vehiculo" type="text">
             </form>
           </div>
         </div>
@@ -29,7 +29,7 @@
           <NuxtLink class="pb-4 SFDisplay-light text-black" to="/">Descrubrí Nissan</NuxtLink>
           <div class="divider"></div>
           <form class="my-4">
-            <input id="search" class="form-control SFDisplay uppercase" placeholder="buscar por modelo o vehiculo" type="text">
+            <input id="search" class="form-control float-left SFDisplay uppercase" placeholder="buscar por modelo o vehiculo" type="text">
           </form>
         </div>
       </div>
@@ -79,7 +79,6 @@
   background-color: hsla(0,0%,100%,.8);
   width: 323px;
   height: 60px;
-  float: right;
   padding-left: 50px;
   font-size: 13px;
 }
