@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1">
       <nav class="flex flex-row items-center">
         <NuxtLink to="/"><img src="~/assets/img/brand.svg" /></NuxtLink>
-        <div class="desktop d-flex flex-row">
+        <div class="desktop hidden md:flex flex-row ">
           <ul class="list-none mb-0 flex flex-row items-center ml-8 gap-x-6">
             <NavLink v-for="link in links" :key="link.name" :link="link" />
           </ul>
@@ -12,7 +12,27 @@
             </form>
           </div>
         </div>
+        <div class="block md:hidden absolute right-5" @click="OpenCloseMenu()">
+          <i v-if="!openMenu" class="ri-menu-line text-4xl p-0"></i> 
+        </div>
       </nav>
+      <div v-if="openMenu" class="flex flex-col md:hidden w-full h-auto fixed bg-white z-50">
+        <div class="flex flex-row items-center">
+          <NuxtLink to="/"><img src="~/assets/img/brand.svg" /></NuxtLink>
+          <div class="block md:hidden absolute right-5" @click="OpenCloseMenu()">
+            <i class="ri-close-line text-4xl p-0"></i> 
+          </div>
+        </div>
+        <div class="container flex flex-col uppercase justify-start text-left pt-5">
+          <p class="pb-4 SFDisplay-heavy text-gray-600">¿Cuál va a ser tu próximo Nissan?</p>
+          <NuxtLink class="pb-4 SFDisplay-light text-black" to="/store">Vehículos</NuxtLink>
+          <NuxtLink class="pb-4 SFDisplay-light text-black" to="/">Descrubrí Nissan</NuxtLink>
+          <div class="divider"></div>
+          <form class="my-4">
+            <input id="search" class="form-control SFDisplay uppercase" placeholder="buscar por modelo o vehiculo" type="text">
+          </form>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -29,13 +49,22 @@
             "name" : "descubrí  nissan",
             "src" : "/"
           }
-        ]
+        ],
+        openMenu: false
       }
+    },
+    methods : {
+      OpenCloseMenu(){
+        this.openMenu = this.openMenu ? false : true
+      },
     }
   }
 </script>
 
 <style scoped>
+.divider{
+  border-top: 1px solid #e3e2e2;
+}
 .search-bar{
   position: absolute;
   right: 15px;

@@ -6,17 +6,19 @@
           class="
             col-12
             flex
-            flex-row
+            flex-col
+            sm:flex-row
             items-center
             nissan-logo
-            pd-4
+            pt-4
+            pb-2
           "
         >
-          <span class="SFDisplay-heavy pe-3">Nissan. </span>
+          <span class="SFDisplay-heavy pr-3">Nissan. </span>
           Innovation that excites
         </div>
       </div>
-      <div class="grid grid-cols-4 my-3">
+      <div class="grid grid-cols-1 md:grid-cols-4 my-3">
         <div class="col-md-3">
           <ul class="list">
             <li class="list-item">

@@ -1,8 +1,8 @@
 <template>
   <NuxtLink :to="redirect" class="text-decoration-none">
     <div class="card-container">
-      <img class="max-w-full p-0" :src="img" />
       <div class="m-3">
+        <img class="max-w-full mx-auto p-0" :src="img" />
         <p class="card-name my-2 SFDisplay-bold uppercase" v-text="car.model"></p>
         <div class="divider"></div>
         <div class="flex flex-row my-4 p-0">
@@ -10,7 +10,7 @@
             <p class="price-title uppercase SFDisplay-bold p-0 m-0">Precio desde</p>
           </div>
           <div class="p-0 ml-auto">
-            <p class="price uppercase SFDisplay-bold p-0 m-0">US$ {{car.amount}}</p>
+            <p class="price uppercase SFDisplay-bold p-0 m-0">US$ {{car.detail.price.amount}}</p>
           </div>
         </div>
         <div class="divider"></div>
@@ -40,6 +40,11 @@
         img: `https://s3.sa-east-1.amazonaws.com/simplimotos-stg.com/${this.car.gallery[0].large}`,
         redirect: `/cars/${this.car.id}`
       } 
+    },
+    filters: {
+      formatPrice: function (value) {
+
+      }
     }
   }
 </script>
