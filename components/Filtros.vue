@@ -1,7 +1,7 @@
 <template>
   <div class="mb-5">
     <div class="grid grid-cols-2">
-      <div class="hidden md:flex flex-row items-center">
+      <div id="filtros" class="hidden md:flex flex-col md:flex-row items-start md:items-center">
         <StoreFilter v-for="(filter, index) in filters" 
                     :ref="'filtro-'+ index" 
                     :referencia="'filtro-'+ index"
@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    props: ['filters','carsToShow'],
+    props: ['filters','carsToShow', 'mobileFilter'],
     data() {
       return {
         appliedFilters: [],
@@ -71,6 +71,16 @@
           ref.filterSelected = ""
         })
         this.appliedFilters = []
+      }
+    },
+    watch: {
+      mobileFilter : function (val) {
+        const filtros = document.getElementById('filtros')
+        if(!val) {
+          filtros.classList.add('hidden')
+        }else{
+          filtros.classList.remove('hidden')
+        }
       }
     }
   }

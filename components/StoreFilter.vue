@@ -1,5 +1,5 @@
 <template>
-  <div class="mr-4">
+  <div class="mt-4 md:mr-4">
     <button :id="filter.name" class="text-black SFDisplay-medium flex flex-row items-center
       font-medium py-3 px-5 border border-gray-200 rounded-lg uppercase text-sm" :disabled="filterPicked" @click="abrirDialog()">
       {{filter.name}}

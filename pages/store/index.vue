@@ -8,9 +8,9 @@
     <div class="container mx-auto" v-if="cars.length > 0">
       <div class="grid grid-cols-2 items-center mt-5 mb-2 uppercase text-sm">
         <p class="p-0 text-gray-600">{{carsToShow.length}} vehículos</p>
-        <p class="text-right sm:hidden text-red-600 text-lg">Filtros</p>
+        <p @click="openCloseMobileFilter ()" class="text-right sm:hidden text-red-600 text-lg">Filtros</p>
       </div>
-      <Filtros :filters="filters" :carsToShow="carsToShow" @quitarFiltro="quitarFiltro" />
+      <Filtros :filters="filters" :carsToShow="carsToShow" @quitarFiltro="quitarFiltro" :mobileFilter="mobileFilter"/>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
         <CarCard v-for="car in carsToShow" :key="car.id" :car="car"/>
       </div>
@@ -32,6 +32,7 @@
         carrocerias: [],
         models: [],
         filters: [],
+        mobileFilter: false
       }
     },
     mounted() {
@@ -120,6 +121,9 @@
           }
         })
         return carsToFilter
+      },
+      openCloseMobileFilter () {
+        this.mobileFilter = this.mobileFilter ? false : true
       }
     }
   }

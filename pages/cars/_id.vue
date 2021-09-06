@@ -13,7 +13,7 @@
       </div>
     </div>
     <div v-if="car" class="container mx-auto grid grid-cols-1 lg:grid-cols-2 my-3">
-      <div class="px-7">
+      <div class="px-0 sm:px-7">
         <Carrusel @prev="prev()" @next="next()">
           <CarruselSlide v-for="(img, index) in imgs" 
                         :key="index" 
@@ -23,13 +23,7 @@
             <img class="mx-auto" :src="img" />
           </CarruselSlide>
         </Carrusel>
-        <div class="grid grid-cols-4 px-5">
-          <img class="border border-solid border-gray-400 rounded-lg" 
-              v-for="(thumbnail, index) in thumbnails"
-              :id="'thumbnail-' + index"
-              :key="index" 
-              :src="thumbnail">
-        </div>
+        <CarruselThumbnail :indexVisible="indexVisible" :thumbnails="thumbnails" />
         <div class="my-3 divider"></div>
         <div class="grid grid-cols-2 text-gray-600 text-sm gap-y-4">
           <p><i class="ri-vuejs-fill"></i>{{caracteristicas.engine}}</p>
@@ -39,7 +33,7 @@
         </div>
         <div class="my-3 divider"></div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-decoration-none list-link uppercase text-sm">
-          <NuxtLink to="#">ver todas las caracteristicas</NuxtLink>
+          <NuxtLink to="/">ver todas las caracteristicas</NuxtLink>
           <NuxtLink to="/">ver galeria de imagenes</NuxtLink>
         </div>
       </div>
